@@ -1,0 +1,68 @@
+<resources>
+
+    <color name="primary_text">#ffffff</color>
+    <color name="accent">#00acc1</color>
+    <color name="actionbar_bg">#006064</color>
+    <color name="actionbar_dark_bg">#00838f</color>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <item name="android:windowFullscreen">true</item>
+
+        <!-- colorPrimary is used for the default action bar background -->
+        <item name="colorPrimary">@color/actionbar_bg</item>
+
+        <!-- colorPrimaryDark is used for the status bar -->
+        <item name="colorPrimaryDark">@color/actionbar_dark_bg</item>
+
+        <!-- colorAccent is used as the default value for colorControlActivated, which is used to tint widgets -->
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:textColorPrimary">@color/primary_text</item>
+        <item name="android:navigationBarColor">@color/actionbar_bg</item>
+    </style>
+    <style name="LastUpdated">
+        <item name="android:textSize">12sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#BFC7C9</item>
+        <item name="android:paddingBottom">10sp</item>
+    </style>
+
+    <style name="MainNumber">
+        <item name="android:textSize">95sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#e64a19</item>
+    </style>
+
+    <style name="MainNumberBarometer" parent="MainNumber">
+        <item name="android:textSize">83sp</item>
+
+    </style>
+
+    <style name="SummaryNumber" parent="MainNumber">
+        <item name="android:textSize">50sp</item>
+    </style>
+
+    <style name="DetailHorizontalRule">
+        <item name="android:background">#BFC7C9</item>
+        <item name="android:layout_height">1sp</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_marginTop">4sp</item>
+        <item name="android:layout_marginBottom">4sp</item>
+    </style>
+    <style name="DetailTable"></style>
+
+    <style name="SummaryLabel">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="DetailLabel">
+        <item name="android:textSize">13sp</item>
+    </style>
+    <style name="DetailValue">
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">right</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>

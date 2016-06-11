@@ -1,0 +1,138 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity">
+
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView android:id="@+id/wind_current" android:layout_width="fill_parent"
+            android:layout_height="wrap_content" style="@style/MainNumber" android:text="@string/default_value" />
+
+
+
+        <View style="@style/DetailHorizontalRule"/>
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="0">
+
+            <TableRow>
+                <TextView
+                    style="@style/DetailLabel"
+                    android:text="@string/day_average"/>
+                <TextView
+                    style="@style/DetailValue"
+                    android:id="@+id/wind_day_average"
+                    android:text="@string/default_value"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    style="@style/DetailLabel"
+                    android:text="@string/day_max"/>
+                <TextView
+                    style="@style/DetailValue"
+                    android:id="@+id/wind_day_max"
+                    android:text="@string/default_value"/>
+            </TableRow>
+
+            <View style="@style/DetailHorizontalRule"/>
+
+            <TableRow>
+                <TextView
+                    style="@style/DetailLabel"
+                    android:text="@string/week_average"/>
+                <TextView
+                    style="@style/DetailValue"
+                    android:id="@+id/wind_week_average"
+                    android:text="@string/default_value"/>
+            </TableRow>
+
+            <View style="@style/DetailHorizontalRule"/>
+            <TableRow>
+                <TextView
+                    style="@style/DetailLabel"
+                    android:text="@string/month_average"/>
+                <TextView
+                    style="@style/DetailValue"
+                    android:id="@+id/wind_month_average"
+                    android:text="@string/default_value"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    style="@style/DetailLabel"
+                    android:text="@string/month_max"/>
+                <TextView
+                    style="@style/DetailValue"
+                    android:id="@+id/wind_month_max"
+                    android:text="@string/default_value"/>
+            </TableRow>
+
+            <View style="@style/DetailHorizontalRule"/>
+            <TableRow>
+                <TextView
+                    style="@style/DetailLabel"
+                    android:text="@string/year_average"/>
+                <TextView
+                    style="@style/DetailValue"
+                    android:id="@+id/wind_year_average"
+                    android:text="@string/default_value"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    style="@style/DetailLabel"
+                    android:text="@string/year_max"/>
+                <TextView
+                    style="@style/DetailValue"
+                    android:id="@+id/wind_year_max"
+                    android:text="@string/default_value"/>
+            </TableRow>
+
+            <View style="@style/DetailHorizontalRule"/>
+            <TableRow>
+                <TextView
+                    style="@style/DetailLabel"
+                    android:text="@string/total_average"/>
+                <TextView
+                    style="@style/DetailValue"
+                    android:id="@+id/wind_total_average"
+                    android:text="@string/default_value"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    style="@style/DetailLabel"
+                    android:text="@string/total_max"/>
+                <TextView
+                    style="@style/DetailValue"
+                    android:id="@+id/wind_total_max"
+                    android:text="@string/default_value"/>
+            </TableRow>
+
+        </TableLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+</ScrollView>
+</RelativeLayout>
