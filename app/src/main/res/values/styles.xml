@@ -1,8 +1,8 @@
 <resources>
 
     <color name="primary_text">#ffffff</color>
-    <color name="accent">#00acc1</color>
-    <color name="actionbar_bg">#006064</color>
+    <color name="accent">#812b11</color>
+    <color name="actionbar_bg">#d04317</color>
     <color name="actionbar_dark_bg">#00838f</color>
     <color name="text_numbers">#e64a19</color>
 
