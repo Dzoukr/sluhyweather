@@ -14,6 +14,8 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.animation.RotateAnimation;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -101,6 +103,18 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
 
     public void updateForced() {
         new GetJsonDataTask().execute(true);
+    }
+
+    private void SetWindIconsRotation(JSONObject wind) {
+        try {
+            String x = wind.getString("CurrentDirection").split(" ")[0];
+            com.github.pwittchen.weathericonview.WeatherIconView iconSum = (com.github.pwittchen.weathericonview.WeatherIconView) findViewById(R.id.wind_icon_summary);
+            com.github.pwittchen.weathericonview.WeatherIconView iconDetail = (com.github.pwittchen.weathericonview.WeatherIconView) findViewById(R.id.wind_icon_detail);
+            iconSum.setRotation(Float.parseFloat(x));
+            iconDetail.setRotation(Float.parseFloat(x));
+        } catch (Exception ex) {
+
+        }
     }
 
     private void SetSummaryUI(String lastUpdated, JSONObject temperature, JSONObject wind, JSONObject humidity, JSONObject rain, JSONObject barometer) throws JSONException {
@@ -419,6 +433,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
                 SetHumidityUI(humidity);
                 SetRainUI(rain);
                 SetBarometerUI(barometer);
+                SetWindIconsRotation(wind);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
