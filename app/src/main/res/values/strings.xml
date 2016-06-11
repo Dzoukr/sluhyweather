@@ -24,30 +24,4 @@
     <string name="yearly_stats">Roční statistiky</string>
     <string name="total_stats">Dlouhodobé statistiky</string>
 
-
-
-
-    <string name="day_average">Denní průměr:</string>
-    <string name="rain_day_sum">Denní úhrn:</string>
-    <string name="day_max">Denní maximum:</string>
-    <string name="day_min">Denní minimum:</string>
-
-    <string name="week_average">Týdenní průměr:</string>
-    <string name="week_max">Týdenní maximum:</string>
-
-    <string name="month_average">Měsíční průměr:</string>
-    <string name="rain_month_sum">Měsíční úhrn:</string>
-    <string name="month_max">Měsíční maximum:</string>
-    <string name="month_min">Měsíční minimum:</string>
-
-    <string name="year_average">Roční průměr:</string>
-    <string name="rain_year_sum">Roční úhrn:</string>
-    <string name="year_max">Roční maximum:</string>
-    <string name="year_min">Roční minimum:</string>
-
-    <string name="total_average">Totální průměr:</string>
-    <string name="total_max">Totální maximum:</string>
-    <string name="total_min">Totální minimum:</string>
-
-
 </resources>
