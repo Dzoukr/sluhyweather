@@ -1,6 +1,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -15,60 +18,98 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-
         <TextView android:id="@+id/last_updated" android:layout_width="fill_parent"
             android:layout_height="wrap_content" style="@style/LastUpdated" android:text="@string/default_value" />
 
-        <TextView android:layout_width="fill_parent"
-            android:layout_height="wrap_content" style="@style/SummaryLabel" android:text="@string/temperature" />
+        <!--Temperature-->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            >
 
-        <TextView android:id="@+id/summary_temperature" android:layout_width="fill_parent"
-            android:layout_height="wrap_content" style="@style/SummaryNumber" android:text="@string/default_value" />
+            <com.github.pwittchen.weathericonview.WeatherIconView
+                android:id="@+id/my_weather_icon"
+                custom:weatherIconResource="@string/wi_thermometer"
+                custom:weatherIconColor="@color/text_numbers"
+                style="@style/IconWeather"
+                />
 
-        <View style="@style/DetailHorizontalRule"/>
+            <TextView android:id="@+id/summary_temperature" android:layout_width="fill_parent"
+                android:layout_height="wrap_content" style="@style/IconNumber" android:text="@string/default_value" />
 
-        <TextView android:layout_width="fill_parent"
-            android:layout_height="wrap_content" style="@style/SummaryLabel" android:text="@string/wind" />
+        </LinearLayout>
+        <View style="@style/SummaryHorizontalRule"/>
 
-        <TextView android:id="@+id/summary_wind" android:layout_width="fill_parent"
-            android:layout_height="wrap_content" style="@style/SummaryNumber" android:text="@string/default_value" />
+        <!--Wind-->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-        <View style="@style/DetailHorizontalRule"/>
+            <com.github.pwittchen.weathericonview.WeatherIconView
+                android:id="@+id/my_weather_icon2"
+                custom:weatherIconResource="@string/wi_wind_direction"
+                custom:weatherIconColor="@color/text_numbers"
+                style="@style/IconWeather" />
 
-        <TextView android:layout_width="fill_parent"
-            android:layout_height="wrap_content" style="@style/SummaryLabel" android:text="@string/humidity" />
+            <TextView android:id="@+id/summary_wind" android:layout_width="fill_parent"
+                android:layout_height="wrap_content" style="@style/IconNumber" android:text="@string/default_value" />
 
-        <TextView android:id="@+id/summary_humidity" android:layout_width="fill_parent"
-            android:layout_height="wrap_content" style="@style/SummaryNumber" android:text="@string/default_value" />
+        </LinearLayout>
+        <View style="@style/SummaryHorizontalRule"/>
 
-        <View style="@style/DetailHorizontalRule"/>
+        <!--Humidity-->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-        <TextView android:layout_width="fill_parent"
-            android:layout_height="wrap_content" style="@style/SummaryLabel" android:text="@string/rain" />
+            <com.github.pwittchen.weathericonview.WeatherIconView
+                android:id="@+id/my_weather_icon3"
+                custom:weatherIconResource="@string/wi_humidity"
+                custom:weatherIconColor="@color/text_numbers"
+                style="@style/IconWeather" />
 
-        <TextView android:id="@+id/summary_rain" android:layout_width="fill_parent"
-            android:layout_height="wrap_content" style="@style/SummaryNumber" android:text="@string/default_value" />
+            <TextView android:id="@+id/summary_humidity" android:layout_width="fill_parent"
+                android:layout_height="wrap_content" style="@style/IconNumber" android:text="@string/default_value" />
 
-        <View style="@style/DetailHorizontalRule"/>
+        </LinearLayout>
+        <View style="@style/SummaryHorizontalRule"/>
 
-        <TextView android:layout_width="fill_parent"
-            android:layout_height="wrap_content" style="@style/SummaryLabel" android:text="@string/barometer" />
+        <!--Rain-->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-        <TextView android:id="@+id/summary_barometer" android:layout_width="fill_parent"
-            android:layout_height="wrap_content" style="@style/SummaryNumber" android:text="@string/default_value" />
+            <com.github.pwittchen.weathericonview.WeatherIconView
+                android:id="@+id/my_weather_icon4"
+                custom:weatherIconResource="@string/wi_rain"
+                custom:weatherIconColor="@color/text_numbers"
+                style="@style/IconWeather" />
 
+            <TextView android:id="@+id/summary_rain" android:layout_width="fill_parent"
+                android:layout_height="wrap_content" style="@style/IconNumber" android:text="99,00 mm/h" />
 
+        </LinearLayout>
+        <View style="@style/SummaryHorizontalRule"/>
 
+        <!--Barometer-->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
+            <com.github.pwittchen.weathericonview.WeatherIconView
+                android:id="@+id/my_weather_icon5"
+                custom:weatherIconResource="@string/wi_barometer"
+                custom:weatherIconColor="@color/text_numbers"
+                style="@style/IconWeather"/>
 
+            <TextView android:id="@+id/summary_barometer" android:layout_width="fill_parent"
+                android:layout_height="wrap_content" style="@style/IconNumber" android:text="@string/default_value" />
 
-
-
-
-
-
-
-
+        </LinearLayout>
 
     </LinearLayout>
 </ScrollView>

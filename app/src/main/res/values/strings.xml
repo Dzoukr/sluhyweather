@@ -16,6 +16,17 @@
     <string name="loading_title">Aktualizuji</string>
     <string name="loading_message">Načítám data z meteostanice</string>
 
+    <string name="average">Ø</string>
+    <string name="sum">Σ</string>
+    <string name="daily_stats">Denní statistiky</string>
+    <string name="weekly_stats">Týdenní statistiky</string>
+    <string name="monthly_stats">Měsíční statistiky</string>
+    <string name="yearly_stats">Roční statistiky</string>
+    <string name="total_stats">Dlouhodobé statistiky</string>
+
+
+
+
     <string name="day_average">Denní průměr:</string>
     <string name="rain_day_sum">Denní úhrn:</string>
     <string name="day_max">Denní maximum:</string>

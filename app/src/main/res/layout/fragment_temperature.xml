@@ -1,6 +1,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -15,129 +18,228 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView android:id="@+id/temperature_current" android:layout_width="fill_parent"
-            android:layout_height="wrap_content" style="@style/MainNumber" android:text="@string/default_value" />
 
-
-        <View style="@style/DetailHorizontalRule"/>
-
-        <TableLayout
-            android:layout_width="fill_parent"
+        <!--Temperature-->
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:stretchColumns="0">
+            >
 
-            <TableRow>
-                <TextView
-                    style="@style/DetailLabel"
-                    android:text="@string/day_average"/>
-                <TextView
-                    style="@style/DetailValue"
-                    android:id="@+id/temperature_day_average"
-                    android:text="@string/default_value"/>
-            </TableRow>
-            <TableRow>
-                <TextView
-                    style="@style/DetailLabel"
-                    android:text="@string/day_max"/>
-                <TextView
-                    style="@style/DetailValue"
-                    android:id="@+id/temperature_day_max"
-                    android:text="@string/default_value"/>
-            </TableRow>
-            <TableRow>
-                <TextView
-                    style="@style/DetailLabel"
-                    android:text="@string/day_min"/>
-                <TextView
-                    style="@style/DetailValue"
-                    android:id="@+id/temperature_day_min"
-                    android:text="@string/default_value"/>
-            </TableRow>
-            <View style="@style/DetailHorizontalRule"/>
-            <TableRow>
-                <TextView
-                    style="@style/DetailLabel"
-                    android:text="@string/month_average"/>
-                <TextView
-                    style="@style/DetailValue"
-                    android:id="@+id/temperature_month_average"
-                    android:text="@string/default_value"/>
-            </TableRow>
-            <TableRow>
-                <TextView
-                    style="@style/DetailLabel"
-                    android:text="@string/month_max"/>
-                <TextView
-                    style="@style/DetailValue"
-                    android:id="@+id/temperature_month_max"
-                    android:text="@string/default_value"/>
-            </TableRow>
-            <TableRow>
-                <TextView
-                    style="@style/DetailLabel"
-                    android:text="@string/month_min"/>
-                <TextView
-                    style="@style/DetailValue"
-                    android:id="@+id/temperature_month_min"
-                    android:text="@string/default_value"/>
-            </TableRow>
-            <View style="@style/DetailHorizontalRule"/>
-            <TableRow>
-                <TextView
-                    style="@style/DetailLabel"
-                    android:text="@string/year_average"/>
-                <TextView
-                    style="@style/DetailValue"
-                    android:id="@+id/temperature_year_average"
-                    android:text="@string/default_value"/>
-            </TableRow>
-            <TableRow>
-                <TextView
-                    style="@style/DetailLabel"
-                    android:text="@string/year_max"/>
-                <TextView
-                    style="@style/DetailValue"
-                    android:id="@+id/temperature_year_max"
-                    android:text="@string/default_value"/>
-            </TableRow>
-            <TableRow>
-                <TextView
-                    style="@style/DetailLabel"
-                    android:text="@string/year_min"/>
-                <TextView
-                    style="@style/DetailValue"
-                    android:id="@+id/temperature_year_min"
-                    android:text="@string/default_value"/>
-            </TableRow>
-            <View style="@style/DetailHorizontalRule"/>
-            <TableRow>
-                <TextView
-                    style="@style/DetailLabel"
-                    android:text="@string/total_average"/>
-                <TextView
-                    style="@style/DetailValue"
-                    android:id="@+id/temperature_total_average"
-                    android:text="@string/default_value"/>
-            </TableRow>
-            <TableRow>
-                <TextView
-                    style="@style/DetailLabel"
-                    android:text="@string/total_max"/>
-                <TextView
-                    style="@style/DetailValue"
-                    android:id="@+id/temperature_total_max"
-                    android:text="@string/default_value"/>
-            </TableRow>
-            <TableRow>
-                <TextView
-                    style="@style/DetailLabel"
-                    android:text="@string/total_min"/>
-                <TextView
-                    style="@style/DetailValue"
-                    android:id="@+id/temperature_total_min"
-                    android:text="@string/default_value"/>
-            </TableRow>
-        </TableLayout>
+            <com.github.pwittchen.weathericonview.WeatherIconView
+                android:id="@+id/my_weather_icon"
+                custom:weatherIconResource="@string/wi_thermometer"
+                custom:weatherIconColor="@color/text_numbers"
+                style="@style/IconWeather.Detail"
+                />
+
+            <TextView android:id="@+id/temperature_current" android:layout_width="fill_parent"
+                android:layout_height="wrap_content" style="@style/IconNumber.Detail" android:text="@string/default_value" />
+
+        </LinearLayout>
+
+        <!--DAY-->
+        <TextView
+            style="@style/DetailHeader"
+            android:text="@string/daily_stats"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/DetailLabel"
+                android:text="@string/average"
+                />
+            <TextView
+                style="@style/DetailValue"
+                android:id="@+id/temperature_day_average"
+                android:text="@string/default_value"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.github.pwittchen.weathericonview.WeatherIconView
+                android:id="@+id/my_weather_icon1"
+                custom:weatherIconResource="@string/wi_direction_up"
+                style="@style/IconWeather.MinMax"
+                />
+            <TextView
+                style="@style/DetailValue"
+                android:id="@+id/temperature_day_max"
+                android:text="@string/default_value"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.github.pwittchen.weathericonview.WeatherIconView
+                android:id="@+id/my_weather_icon2"
+                custom:weatherIconResource="@string/wi_direction_down"
+                style="@style/IconWeather.MinMax"
+                />
+            <TextView
+                style="@style/DetailValue"
+                android:id="@+id/temperature_day_min"
+                android:text="@string/default_value"/>
+        </LinearLayout>
+
+        <!--MONTH-->
+        <TextView
+            style="@style/DetailHeader"
+            android:text="@string/monthly_stats"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/DetailLabel"
+                android:text="@string/average"
+                />
+            <TextView
+                style="@style/DetailValue"
+                android:id="@+id/temperature_month_average"
+                android:text="@string/default_value"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.github.pwittchen.weathericonview.WeatherIconView
+                android:id="@+id/my_weather_iconmmax"
+                custom:weatherIconResource="@string/wi_direction_up"
+                style="@style/IconWeather.MinMax"
+                />
+            <TextView
+                style="@style/DetailValue"
+                android:id="@+id/temperature_month_max"
+                android:text="@string/default_value"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.github.pwittchen.weathericonview.WeatherIconView
+                android:id="@+id/my_weather_iconmmin"
+                custom:weatherIconResource="@string/wi_direction_down"
+                style="@style/IconWeather.MinMax"
+                />
+            <TextView
+                style="@style/DetailValue"
+                android:id="@+id/temperature_month_min"
+                android:text="@string/default_value"/>
+        </LinearLayout>
+
+        <!--YEAR-->
+        <TextView
+            style="@style/DetailHeader"
+            android:text="@string/yearly_stats"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/DetailLabel"
+                android:text="@string/average"
+                />
+            <TextView
+                style="@style/DetailValue"
+                android:id="@+id/temperature_year_average"
+                android:text="@string/default_value"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.github.pwittchen.weathericonview.WeatherIconView
+                android:id="@+id/my_weather_iconymax"
+                custom:weatherIconResource="@string/wi_direction_up"
+                style="@style/IconWeather.MinMax"
+                />
+            <TextView
+                style="@style/DetailValue"
+                android:id="@+id/temperature_year_max"
+                android:text="@string/default_value"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.github.pwittchen.weathericonview.WeatherIconView
+                android:id="@+id/my_weather_iconymin"
+                custom:weatherIconResource="@string/wi_direction_down"
+                style="@style/IconWeather.MinMax"
+                />
+            <TextView
+                style="@style/DetailValue"
+                android:id="@+id/temperature_year_min"
+                android:text="@string/default_value"/>
+        </LinearLayout>
+
+        <!--TOTAL-->
+        <TextView
+            style="@style/DetailHeader"
+            android:text="@string/total_stats"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/DetailLabel"
+                android:text="@string/average"
+                />
+            <TextView
+                style="@style/DetailValue"
+                android:id="@+id/temperature_total_average"
+                android:text="@string/default_value"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.github.pwittchen.weathericonview.WeatherIconView
+                android:id="@+id/my_weather_icontmax"
+                custom:weatherIconResource="@string/wi_direction_up"
+                style="@style/IconWeather.MinMax"
+                />
+            <TextView
+                style="@style/DetailValue"
+                android:id="@+id/temperature_total_max"
+                android:text="@string/default_value"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.github.pwittchen.weathericonview.WeatherIconView
+                android:id="@+id/my_weather_icontmin"
+                custom:weatherIconResource="@string/wi_direction_down"
+                style="@style/IconWeather.MinMax"
+                />
+            <TextView
+                style="@style/DetailValue"
+                android:id="@+id/temperature_total_min"
+                android:text="@string/default_value"/>
+        </LinearLayout>
+
+
+
+
 
 
 
